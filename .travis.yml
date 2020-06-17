@@ -15,7 +15,7 @@ after_success:
     - docker build -t atisha/multi-nginx  ./nginx
     - docker build -t atisha/multi-server ./server
     - docker build -t atisha/multi-worker ./worker
-    #login to docker CLI
+    #login to docker CLI with credentials
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
     #take images and push them to docker hub
     - docker push atisha/multi-client
